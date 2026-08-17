@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  /* Silversands — silver shore: shell white, silver mist, deep teal, sun gold */
+  --color-shell: #f7f5f0;
+  --color-mist: #dfe3e1;
+  --color-silver: #aab4b2;
+  --color-deep: #17323c;
+  --color-teal: #2a6f7c;
+  --color-teal-2: #3f8f9c;
+  --color-sun: #d6b25e;
+
+  --font-body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.font-serif { font-family: var(--font-serif); }
+.font-body { font-family: var(--font-body); }
+
+@keyframes soft-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,.45); }
+  55% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+}
+.wa-pulse { animation: soft-pulse 2.2s infinite; }
+
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in-view { opacity: 1; transform: none; }
+
+/* crossfade hero slides */
+.hero-slide { transition: opacity 1.6s ease; }
