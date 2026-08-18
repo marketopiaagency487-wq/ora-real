@@ -13,7 +13,7 @@ const waLink = (msg: string) =>
 const WA_DEFAULT = waLink(
   "مرحباً، أريد الاستفسار عن أسعار سيلفر ساندس الساحل الشمالي Silversands من اورا ديفلوبرز"
 );
-const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // TODO
+const WEB3FORMS_KEY = "f8edb7d0-abd8-49c6-bf1c-f71073b981dc"; // TODO
 
 const CONV_FORM = "AW-XXXXXXXXXX/FORM_LABEL"; // TODO
 const CONV_WHATSAPP = "AW-XXXXXXXXXX/WA_LABEL"; // TODO
