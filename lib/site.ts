@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────
 
 export const site = {
-  url: "https://solana-eastlane.example.com", // ← غيّرها بالدومين الفعلي
+  url: "https://orapropertiese.org/", // ← غيّرها بالدومين الفعلي
   agency: "Grandeur Spaces",
   project: "سولانا إيست لين",
   projectEn: "Solana East Lane",
@@ -17,7 +17,7 @@ export const site = {
   email: "leads@grandeur-spaces.com",
 
   // ← ضع مفتاح Web3Forms هنا قبل النشر
-  web3forms: "",
+  web3forms: "f8edb7d0-abd8-49c6-bf1c-f71073b981dc",
 
   // ← Google Ads: ضع الـ tag و labels قبل النشر
   gtag: "",
