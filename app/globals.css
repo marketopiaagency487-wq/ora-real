@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #063d4c;
+  --color-ink-2: #05596f;
+  --color-ink-3: #0d7288;
+  --color-paper: #f7f3ea;
+  --color-sand: #ecdfc4;
+  --color-sand-2: #dbc9a4;
+  --color-brass: #b28a45;
+  --color-brass-2: #e8c88a;
+  --color-sea: #7ec5c9;
+
+  --font-display: "Noto Kufi Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-num: "Archivo", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* أرقام لاتينية بعرض ثابت */
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-weight: 600;
+}
+
+/* كارت الـ slab — الحافة المنحنية + الشريط النحاسي */
+.slab {
+  border-radius: 0 28px 28px 0;
+  border-inline-start: 4px solid var(--color-brass);
+  background: #fff;
+}
+
+.slab-dark {
+  border-radius: 0 28px 28px 0;
+  border-inline-start: 4px solid var(--color-brass-2);
+  background: var(--color-ink-2);
+  color: var(--color-paper);
+}
+
+.frame {
+  border-radius: 4px 36px 36px 4px;
+  border-inline-start: 4px solid var(--color-brass);
+  overflow: hidden;
+}
+
+.eyebrow {
+  font-family: var(--font-num);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.ribbon-rule {
+  height: 2px;
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--color-brass) 25%,
+    var(--color-brass) 75%,
+    transparent
+  );
+  opacity: 0.5;
+}
+
+/* الظهور بالتمرير */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* زوم بطيء على صورة الهيرو */
+@keyframes kenburns {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1.16);
+  }
+}
+.kenburns {
+  animation: kenburns 24s ease-in-out infinite alternate;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass-2);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .kenburns {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
