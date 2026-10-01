@@ -52,7 +52,7 @@ export function Amenities() {
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {amenities.map((a, i) => (
             <Reveal key={a.title} delay={i * 50}>
-              <div className="slab h-full p-6 shadow-sm">
+              <div className="slab h-full p-5 shadow-sm md:p-6">
                 <h3 className="text-lg text-ink">{a.title}</h3>
                 <p className="mt-3 text-[15px] leading-8 text-ink/70">
                   {a.body}
@@ -90,7 +90,7 @@ export function Gallery() {
             sub="صور تعبيرية للمباني السكنية ومبنى العيادات ميديكا."
           />
         </Reveal>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:gap-4 lg:grid-cols-3">
           {shots.map((s, i) => (
             <Reveal key={s.src} delay={i * 40}>
               <div className="frame">
@@ -98,7 +98,7 @@ export function Gallery() {
                   src={s.src}
                   alt={s.alt}
                   loading="lazy"
-                  className="h-64 w-full object-cover"
+                  className="h-32 w-full object-cover sm:h-48 md:h-64"
                 />
               </div>
             </Reveal>

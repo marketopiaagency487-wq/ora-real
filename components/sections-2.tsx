@@ -89,7 +89,23 @@ export function Compare() {
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="mt-10 overflow-x-auto">
+          <div className="mt-8 grid gap-4 md:hidden">
+            {[a, b].map((p, idx) => (
+              <div key={p.slug} className="slab p-5 shadow-sm">
+                <p className="num text-xs tracking-[0.14em] text-brass">{p.nameEn}</p>
+                <p className="mt-1 text-lg text-ink">{p.name}</p>
+                <dl className="mt-4 divide-y divide-sand-2">
+                  {rows.map((r) => (
+                    <div key={r.label} className="flex justify-between gap-4 py-2.5 text-sm">
+                      <dt className="shrink-0 text-ink/55">{r.label}</dt>
+                      <dd className="text-end text-ink">{idx === 0 ? r.a : r.b}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 hidden overflow-x-auto md:block">
             <table className="w-full min-w-[640px] border-collapse text-start">
               <thead>
                 <tr>

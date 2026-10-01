@@ -18,6 +18,7 @@ const cards = products.flatMap((p) =>
       eoi: p.eoi,
       dpLabel: p.dpLabel,
       plan: p.plan,
+      terms: p.terms,
       image: u.image,
     }))
   )
@@ -74,36 +75,30 @@ export default function Units() {
           </button>
         </div>
 
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-4">
           {list.map((c, i) => (
-            <Reveal key={c.key} delay={(i % 4) * 50}>
+            <Reveal key={c.key} delay={(i % 4) * 50} className="w-[82%] shrink-0 snap-start md:w-auto">
               <article className="slab-dark flex h-full flex-col overflow-hidden">
-                <div className="relative h-44 w-full">
-                  <img src={c.image} alt={`${c.type} ${c.spec} — سولانا إيست لين`} loading="lazy" className="h-44 w-full object-cover" />
+                <div className="relative h-40 w-full md:h-44">
+                  <img src={c.image} alt={`${c.type} ${c.spec} — سولانا إيست لين`} loading="lazy" className="h-40 w-full object-cover md:h-44" />
                   <span className="num absolute end-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-[11px] tracking-[0.12em] text-brass-2">
                     {c.productEn}
                   </span>
                 </div>
 
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col p-5 md:p-6">
                   <p className="text-xs text-paper/50">{c.product}</p>
                   <h3 className="mt-1 text-lg text-paper">
                     {c.type} — {c.spec}
                   </h3>
 
-                  <div className="mt-4 grid grid-cols-2 gap-3 rounded-lg bg-ink/50 p-4 text-[13px]">
-                    <div>
-                      <p className="text-paper/50">جدية الحجز</p>
-                      <p className="num mt-1 text-paper">{c.eoi}</p>
-                    </div>
-                    <div>
-                      <p className="text-paper/50">التشطيب</p>
-                      <p className="mt-1 text-paper">{c.slug === "medica" ? "كامل بالحمامات" : "مخدومة بالكامل"}</p>
-                    </div>
-                    <div className="col-span-2">
-                      <p className="text-paper/50">السداد</p>
-                      <p className="mt-1 text-paper">{c.slug === "medica" ? `${c.dpLabel} · ${c.plan}` : c.plan}</p>
-                    </div>
+                  <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-3 rounded-lg bg-ink/50 p-4 text-[13px]">
+                    {c.terms.map(([k, v]) => (
+                      <div key={k}>
+                        <p className="text-paper/50">{k}</p>
+                        <p className="mt-1 text-paper"><bdi>{v}</bdi></p>
+                      </div>
+                    ))}
                   </div>
 
                   <div className="mt-5">
@@ -132,6 +127,8 @@ export default function Units() {
             </Reveal>
           ))}
         </div>
+
+        <p className="mt-4 text-xs text-paper/50 md:hidden">اسحب لعرض باقي الوحدات ←</p>
 
         <p className="mt-10 text-xs leading-6 text-paper/45">
           الأسعار المعروضة أسعار بداية (Starting Price) وتختلف حسب المساحة والدور والموقع داخل المبنى. العيادات عليها وديعة صيانة 10%.

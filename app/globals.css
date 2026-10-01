@@ -131,3 +131,6 @@ h3,
     scroll-behavior: auto;
   }
 }
+
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{scrollbar-width:none}

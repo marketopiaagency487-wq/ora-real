@@ -34,8 +34,8 @@ export default function Header() {
     >
       <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between px-5">
         <Link href="/" className="flex flex-col leading-none">
-          <span className="num text-lg tracking-[0.28em] text-paper">SOLANA EAST LANE</span>
-          <span className="mt-1 text-[11px] text-brass-2">
+          <span className="num whitespace-nowrap text-[13px] tracking-[0.16em] text-paper sm:text-lg sm:tracking-[0.28em]">SOLANA EAST LANE</span>
+          <span className="mt-1 whitespace-nowrap text-[10px] text-brass-2 sm:text-[11px]">
             by ORA — التسعين الجنوبي
           </span>
         </Link>
@@ -67,7 +67,7 @@ export default function Header() {
             onClick={() => track("whatsapp")}
             target="_blank"
             rel="noopener"
-            className="rounded-full bg-brass-2 px-5 py-2 text-sm font-semibold text-ink transition hover:bg-brass-2/85"
+            className="whitespace-nowrap rounded-full bg-brass-2 px-4 py-2 text-[13px] font-semibold text-ink transition hover:bg-brass-2/85 sm:px-5 sm:text-sm"
           >
             تواصل الآن
           </a>

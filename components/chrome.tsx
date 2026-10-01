@@ -11,7 +11,7 @@ const WA_MSG =
 
 export function FloatingCtas() {
   return (
-    <div className="fixed bottom-24 end-4 z-40 flex flex-col gap-3 md:bottom-6">
+    <div className="fixed bottom-6 end-4 z-40 hidden flex-col gap-3 md:flex">
       <a
         href={waLink(WA_MSG)}
         target="_blank"
@@ -134,7 +134,7 @@ export function CookieConsent() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-14 z-50 mx-auto max-w-3xl rounded-xl bg-ink px-5 py-4 text-paper shadow-xl md:bottom-4">
+    <div className="fixed inset-x-3 bottom-16 z-50 mx-auto max-w-3xl rounded-xl bg-ink px-5 py-4 text-paper shadow-xl md:bottom-4">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <p className="text-sm leading-7 text-paper/80">
           نستخدم ملفات تعريف الارتباط لتحسين التجربة وقياس أداء الحملات.

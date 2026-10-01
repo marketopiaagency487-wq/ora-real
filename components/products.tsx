@@ -20,7 +20,7 @@ export default function Products() {
                 <div className="frame m-0 h-52 w-full border-s-0">
                   <img src={p.image} alt={p.name} className="h-52 w-full object-cover" />
                 </div>
-                <div className="p-7">
+                <div className="p-5 md:p-7">
                   <p className="eyebrow">{p.eyebrow}</p>
                   <h3 className="num mt-3 text-xl tracking-[0.14em] text-ink">{p.nameEn}</h3>
                   <p className="mt-1 text-lg text-ink/80">{p.name}</p>
@@ -36,7 +36,7 @@ export default function Products() {
                     ))}
                   </ul>
 
-                  <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 border-t border-sand-2 pt-5">
+                  <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-sand-2 pt-5 sm:flex sm:flex-wrap sm:gap-x-8">
                     <div>
                       <p className="text-xs text-ink/55">جدية الحجز</p>
                       <p className="num mt-1 text-lg text-ink">{p.eoi}</p>
@@ -45,7 +45,7 @@ export default function Products() {
                       <p className="text-xs text-ink/55">السداد</p>
                       <p className="mt-1 text-[15px] text-ink">{p.plan}</p>
                     </div>
-                    <div>
+                    <div className="col-span-2">
                       <p className="text-xs text-ink/55">محدودية الطرح</p>
                       <p className="mt-1 text-[15px] text-ink">{p.scarcity}</p>
                     </div>
